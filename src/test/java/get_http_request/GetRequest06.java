@@ -17,7 +17,7 @@ public class GetRequest06 {
         ve content type’inin “application/json”
         ve firstname’in “James”
         ve totalprice’in 111
-        ve checkin date’in "2018-01-01"   oldugunu test edi
+        ve checkin date’in "2018-01-01"   oldugunu test edin
      */
     @Test
     public void test(){
