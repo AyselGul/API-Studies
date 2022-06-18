@@ -17,7 +17,9 @@ public class GetRequest09 extends DummyBaseUrl {
     */
     @Test
     public void test() {
-        spec02.pathParams("pm1", "v1", "pm2", "employee", "pm3", "12");
+        spec02.pathParams("pm1", "v1",
+                "pm2", "employee",
+                "pm3", "12");
 
         Response response = RestAssured.given().spec(spec02).get("/{pm1}/{pm2}/{pm3}");
         response.prettyPrint();

@@ -43,6 +43,7 @@ public class GetRequest10 extends DummyBaseUrl {
            assertEquals(24,js.getList("data.id").size());
            assertTrue("Rhona Davidson",js.getList("data.employee_name").contains("Rhona Davidson"));
 
+        
 
              // 1.WAY
         List<Integer> list = new ArrayList<>();
@@ -55,6 +56,7 @@ public class GetRequest10 extends DummyBaseUrl {
 
         List<Integer> list2 = Arrays.asList(21,23,61);
         assertTrue(js.getList("data.employee_age").containsAll(list2));
+
 
 
 

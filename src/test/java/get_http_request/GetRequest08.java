@@ -13,9 +13,6 @@ public class GetRequest08 extends DummyBaseUrl {
 
 
 
-
-
-
     @Test
     public void test(){
         spec02.pathParams("pm1","v1","pm2","employees");
@@ -37,10 +34,12 @@ public class GetRequest08 extends DummyBaseUrl {
         for (int i = 0; i < 5; i++) {
             System.out.println(i+1+ ".worker : " + js.getString("data["+ i+ "].employee_name"));
         }
+        // 2. way
+        System.out.println(js.getString("data.employee_name[0,1,2,3,4]"));
 
-           // 4) En son calisanin adini konsola yazdiralim
+        // 4) En son calisanin adini konsola yazdiralim
            System.out.println(js.getString("data.employee_name[-1]"));
-
+          // System.out.println(js.getString("data[-1].employee_name"));
 
     }
 }
