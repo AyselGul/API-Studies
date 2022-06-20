@@ -19,10 +19,17 @@ public class Authentication {
 
         Map<String,Object> map = new HashMap<>();
 
-        map.put(username,username);
-        map.put(password,password);
+        map.put("username",username);
+        map.put("password",password);
         Response response = RestAssured.given().contentType(ContentType.JSON).body(map).post(endpoint);
         JsonPath token = response.jsonPath();
         return token.getString("id.token");
+
+
+    }
+
+    public static void main(String[] args) {
+        String uptoDateToken = generateToken();
+        System.out.println(uptoDateToken);
     }
 }

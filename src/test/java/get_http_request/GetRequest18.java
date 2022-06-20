@@ -70,7 +70,6 @@ public class GetRequest18 extends GMIBaseUrl {
               Assert.assertEquals(expectedData.get("city"),actualData.get("city"));
               Assert.assertEquals(expectedData.get("ssn"),actualData.get("ssn"));
 
-
                 // JSON PATH
 
         JsonPath jsonPath=response.jsonPath();
@@ -81,13 +80,6 @@ public class GetRequest18 extends GMIBaseUrl {
        assertEquals("mobilePhoneNumber", jsonPath.getString("909-162-8114"));
        assertEquals("city", jsonPath.getString("St Louis"));
        assertEquals("ssn", jsonPath.getString("108-53-6655"));
-
-
-
-
-
-
-
 
 
     }
