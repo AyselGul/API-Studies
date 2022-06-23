@@ -1,5 +1,8 @@
 package testData;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,4 +26,40 @@ public class HerokuappTestData {
       return expectedData;
     }
 
+
+
+    /*
+
+      /*
+       https://restful-booker.herokuapp.com/booking
+       { "firstname": "Ali",
+                  "lastname": "Can",
+                  "totalprice": 500,
+                  "depositpaid": true,
+                  "bookingdates": {
+                      "checkin": "2022-03-01",
+                      "checkout": "2022-03-11"
+                   }
+     */
+          public JSONObject setupTestandPostData(){
+
+              JSONObject bookingDates = new JSONObject();
+              bookingDates.put("checkin","2022-03-01");
+              bookingDates.put("checkout","2022-03-11");
+
+
+              JSONObject expectedRequestBody = new JSONObject();
+              expectedRequestBody.put("firstname","Ali");
+              expectedRequestBody.put("lastname", "Can");
+              expectedRequestBody.put("totalprice", 500);
+              expectedRequestBody.put("depositpaid", true);
+              expectedRequestBody.put("bookingdates", bookingDates);
+
+
+              return expectedRequestBody;
+
+
+
+
+          }
         }
