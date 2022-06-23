@@ -34,6 +34,10 @@ public class GetRequest20 extends JsonPlaceholderBaseUrl {
     Response response = RestAssured.given().spec(spec04).get("/{prm1}/{prm2}");
 
     // System.out.println(response.prettyPrint());
+
+
+    // De- Serialization
+
 // Form EXPECTED DATA
 
     Map<String, Object> expectedData= new HashMap<>();
@@ -45,6 +49,17 @@ public class GetRequest20 extends JsonPlaceholderBaseUrl {
     expectedData.put("Server", "cloudflare");
     expectedData.put("statusCode", 200);
     expectedData.put("id", 2);
+
+
+// Form ACTUAL DATA
+
+    Map<String,Object> actualData = response.as(Map.class);
+
+    assertEquals(expectedData.get("completed"),actualData.get("completed"));
+    assertEquals(expectedData.get("title"),actualData.get("title"));
+    assertEquals(expectedData.get("userId"),actualData.get("userId"));
+    assertEquals(expectedData.get("id"),actualData.get("id"));
+
 
 
 
@@ -68,15 +83,6 @@ public class GetRequest20 extends JsonPlaceholderBaseUrl {
                     "id", equalTo(expectedData.get("id")),
                     "completed", equalTo(expectedData.get("completed")));
 
-
-// De- Serialization
-
-    Map<String,Object> actualData = response.as(Map.class);
-
-    assertEquals(expectedData.get("completed"),actualData.get("completed"));
-    assertEquals(expectedData.get("title"),actualData.get("title"));
-    assertEquals(expectedData.get("userId"),actualData.get("userId"));
-    assertEquals(expectedData.get("id"),actualData.get("id"));
 
 
 }
