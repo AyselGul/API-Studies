@@ -36,12 +36,26 @@ public JSONObject setupPostData(){
 
     JSONObject postJsobj = new JSONObject();
     postJsobj.put("userId", 55);
-    postJsobj.put("statuscode", 201);
     postJsobj.put("title","Tidy your room");
     postJsobj.put("completed", false);
 
     return postJsobj;
 }
+
+public JSONObject setupPutData(){
+
+    JSONObject jsonObject = new JSONObject();
+
+    jsonObject.put("userId", 21);
+    jsonObject.put("title", "Wash the dishes");
+    jsonObject.put("completed", false);
+    return jsonObject;
+
+}
+
+
+
+
     }
 
 
