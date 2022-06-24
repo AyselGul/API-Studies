@@ -1,6 +1,7 @@
 package testData;
 
 import baseUrl.DummyBaseUrl;
+import org.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -48,6 +49,19 @@ public class DummyTestData  {
             return expectedData;
 
             }
+
+
+    public JSONObject setupDelete(){
+
+        JSONObject jsobj= new JSONObject();
+
+        jsobj.put("status", "success");
+        jsobj.put("data", "6");
+        jsobj.put("message", "Successfully! Record has been deleted");
+
+        return jsobj;
+
+    }
         }
 
 
