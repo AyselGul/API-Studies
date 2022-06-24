@@ -53,7 +53,27 @@ public JSONObject setupPutData(){
 
 }
 
+public JSONObject setupPatchRequestData(){
 
+    JSONObject jsObj= new JSONObject();
+    jsObj.put("title", "Batch44");
+    return  jsObj;
+
+
+}
+
+public JSONObject setupPatchData(){
+    JSONObject expectedPatchData= new JSONObject();
+
+    expectedPatchData.put("userId", 10);
+    expectedPatchData.put("title", "Batch44");
+    expectedPatchData.put("completed", true);
+    expectedPatchData.put("id", 198);
+
+
+    return expectedPatchData;
+
+}
 
 
     }
