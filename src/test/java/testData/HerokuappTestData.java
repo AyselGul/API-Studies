@@ -1,10 +1,6 @@
 package testData;
-
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.json.JSONObject;
-
 import java.util.HashMap;
-import java.util.Map;
 
 public class HerokuappTestData {
 
@@ -26,10 +22,6 @@ public class HerokuappTestData {
       return expectedData;
     }
 
-
-
-    /*
-
       /*
        https://restful-booker.herokuapp.com/booking
        { "firstname": "Ali",
@@ -39,12 +31,12 @@ public class HerokuappTestData {
                   "bookingdates": {
                       "checkin": "2022-03-01",
                       "checkout": "2022-03-11"
-                   }
+        }
      */
-          public JSONObject setupTestandPostData(){
+          public JSONObject setupTestandRequestData(){
 
-              JSONObject bookingDates = new JSONObject();
-              bookingDates.put("checkin","2022-03-01");
+              JSONObject bookingDates = new JSONObject();  // MAP teki gibi HashMap<String,Object> type islemi yok direk obj.olustururuz
+              bookingDates.put("checkin","2022-03-01");         // degerleri K-V seklinde alir
               bookingDates.put("checkout","2022-03-11");
 
 
@@ -57,9 +49,6 @@ public class HerokuappTestData {
 
 
               return expectedRequestBody;
-
-
-
 
           }
         }
