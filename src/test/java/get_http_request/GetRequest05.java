@@ -21,8 +21,11 @@ response body’deki “userId”’nin 7
     public void test(){
 
       String jpholder="https://jsonplaceholder.typicode.com/todos/123";
+
         Response response= RestAssured.get(jpholder);
+
         response.prettyPrint();
+
         response.then().contentType(ContentType.JSON)
                 .statusCode(200).headers("Server", equalTo("cloudflare"))
                 .body("userId",equalTo(7),

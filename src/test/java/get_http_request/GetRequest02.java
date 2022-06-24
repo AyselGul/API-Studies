@@ -18,7 +18,6 @@ public class GetRequest02 {
         //response.prettyPeek();
         response.
                 then().
-                and().
                 contentType(ContentType.JSON).
                 statusCode(200).
                 statusLine("HTTP/1.1 200 OK");

@@ -12,8 +12,10 @@ public class GetRequest01 {
     public void test(){
 
         String url = "https://restful-booker.herokuapp.com/booking";
+
         Response response=RestAssured.given().when().get(url);
        response.prettyPrint();
+
        System.out.println("status code : " + response.statusCode());
        System.out.println("contenType : "+ response.contentType());
        System.out.println("Test time : " + response.time());
